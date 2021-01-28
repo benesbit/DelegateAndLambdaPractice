@@ -2,7 +2,7 @@
 
 namespace DelegatesAndLambdas
 {
-    public delegate void WorkPerformedHandler(int hours, WorkType workType);
+    public delegate int WorkPerformedHandler(int hours, WorkType workType);
     class Program
     {
         static void Main(string[] args)
@@ -23,17 +23,17 @@ namespace DelegatesAndLambdas
             del(5, WorkType.GoToMeetings);
         }
 
-        static void WorkPerformed1(int hours, WorkType workType)
+        static int WorkPerformed1(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed1 Called: {hours} and {workType}");
         }
 
-        static void WorkPerformed2(int hours, WorkType workType)
+        static int WorkPerformed2(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed2 Called: {hours} and {workType}");
         }
 
-        static void WorkPerformed3(int hours, WorkType workType)
+        static int WorkPerformed3(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed3 Called: {hours} and {workType}");
         }
