@@ -11,8 +11,7 @@ namespace DelegatesAndLambdas
             WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
             WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
 
-            del1 += del2;
-            del1 += del3;
+            del1 += del2 + del3;
 
             del1(10, WorkType.GenerateReports);
 
