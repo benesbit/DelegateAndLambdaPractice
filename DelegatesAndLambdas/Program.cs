@@ -20,7 +20,7 @@ namespace DelegatesAndLambdas
             Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
         }
 
-        static void Worker_WorkCompleted(object sender, EventArgs e)
+        private static void Worker_WorkCompleted(object sender, EventArgs e)
         {
             Console.WriteLine("Worker is done!");
         }
