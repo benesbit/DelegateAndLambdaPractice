@@ -26,11 +26,6 @@ namespace DelegatesAndLambdas
 
         protected virtual void OnWorkPerformed(int hours, WorkType workType)
         {
-            //if (WorkPerformed != null)
-            //{
-            //    WorkPerformed(hours, WorkType);
-            //}
-
             var del = WorkPerformed as EventHandler<WorkPerformedEventArgs>;
             if (del != null)
             {
@@ -40,11 +35,6 @@ namespace DelegatesAndLambdas
 
         protected virtual void OnWorkCompleted()
         {
-            //if (WorkCompleted != null)
-            //{
-            //    WorkCompleted(hours, WorkType);
-            //}
-
             var del = WorkCompleted as EventHandler;
             if (del != null)
             {
