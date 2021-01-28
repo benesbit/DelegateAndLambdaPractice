@@ -13,7 +13,11 @@ namespace DelegatesAndLambdas
 
         public void DoWork(int hours, WorkType workType)
         {
-
+            for (int i = 0; i < hours; ++i)
+            {
+                // Raise event for each hour worked.
+            }
+            // Raise event for work completed.
         }
     }
 }
