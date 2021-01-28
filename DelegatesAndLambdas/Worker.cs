@@ -8,7 +8,7 @@ namespace DelegatesAndLambdas
 
     class Worker
     {
-        public event WorkPerformedHandler WrokPerformed;
+        public event WorkPerformedHandler WorkPerformed;
         public event EventHandler WorkCompleted;
 
         public void DoWork(int hours, WorkType workType)
