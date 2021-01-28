@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DelegatesAndLambdas
 {
-    public delegate int WorkPerformedHandler(int hours, WorkType workType);
+    public delegate int WorkPerformedHandler(object sender, WorkPerformedEventArgs e);
 
     class Worker
     {
