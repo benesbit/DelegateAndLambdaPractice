@@ -32,7 +32,7 @@ namespace DelegatesAndLambdas
             var del = WorkPerformed as WorkPerformedHandler;
             if (del != null)
             {
-                del(hours, workType);
+                del(this, new WorkPerformedEventArgs(hours, workType));
             }
         }
 
