@@ -13,7 +13,8 @@ namespace DelegatesAndLambdas
 
             del1 += del2 + del3;
 
-            del1(10, WorkType.GenerateReports);
+            int finalHours = del1(10, WorkType.GenerateReports);
+            Console.WriteLine($"Final hours: {finalHours}");
 
             Console.Read();
         }
