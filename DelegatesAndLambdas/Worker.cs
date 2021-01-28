@@ -6,5 +6,9 @@ namespace DelegatesAndLambdas
 {
     class Worker
     {
+        public void DoWork(int hours, WorkType workType)
+        {
+
+        }
     }
 }
