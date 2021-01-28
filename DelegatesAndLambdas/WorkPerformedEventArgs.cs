@@ -7,9 +7,10 @@ namespace DelegatesAndLambdas
     public class WorkPerformedEventArgs : EventArgs
     {
 
-        public WorkPerformedEventArgs()
+        public WorkPerformedEventArgs(int hours, WorkType workType)
         {
-
+            Hours = hours;
+            WorkType = workType;
         }
 
         public int Hours { get; set; }
