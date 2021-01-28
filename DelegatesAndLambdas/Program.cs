@@ -17,8 +17,15 @@ namespace DelegatesAndLambdas
             //Console.WriteLine($"Final hours: {finalHours}");
 
             var worker = new Worker();
+            worker.WorkPerformed += new EventHandler<WorkPerformedEventArgs>(worker_WorkPerformed);
+            worker.DoWork(8, WorkType.GenerateReports);
 
             Console.Read();
+        }
+
+        static void worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        {
+            Console.WriteLine($"Hours: {e.Hours}\t Work Type: {e.WorkType}");
         }
 
         //static void DoWork(WorkPerformedHandler del)
