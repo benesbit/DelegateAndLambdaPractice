@@ -15,7 +15,7 @@ namespace DelegatesAndLambdas
             Console.Read();
         }
 
-        static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
         {
             Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
         }
