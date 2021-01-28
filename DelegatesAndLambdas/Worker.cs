@@ -16,8 +16,10 @@ namespace DelegatesAndLambdas
             for (int i = 0; i < hours; ++i)
             {
                 // Raise event for each hour worked.
+                OnWorkPerformed(i + 1, workType);
             }
             // Raise event for work completed.
+            OnWorkCompleted();
         }
 
         protected virtual void OnWorkPerformed(int hours, WorkType workType)
