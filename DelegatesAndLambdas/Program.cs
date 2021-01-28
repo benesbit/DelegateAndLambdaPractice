@@ -12,7 +12,7 @@ namespace DelegatesAndLambdas
             worker.WorkCompleted += Worker_WorkCompleted;
             worker.DoWork(8, WorkType.GenerateReports);
 
-            Console.Read();
+            //Console.Read();
         }
 
         private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
