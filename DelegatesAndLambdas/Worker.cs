@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DelegatesAndLambdas
 {
-    public delegate int WorkPerformedHandler(object sender, WorkPerformedEventArgs e);
+    //public delegate int WorkPerformedHandler(object sender, WorkPerformedEventArgs e);
 
     class Worker
     {
-        public event WorkPerformedHandler WorkPerformed;
+        public event EventHandler<WorkPerformedEventArgs> WorkPerformed;
         public event EventHandler WorkCompleted;
 
         public void DoWork(int hours, WorkType workType)
@@ -29,7 +29,7 @@ namespace DelegatesAndLambdas
             //    WorkPerformed(hours, WorkType);
             //}
 
-            var del = WorkPerformed as WorkPerformedHandler;
+            var del = WorkPerformed as EventHandler<WorkPerformedEventArgs>;
             if (del != null)
             {
                 del(this, new WorkPerformedEventArgs(hours, workType));
