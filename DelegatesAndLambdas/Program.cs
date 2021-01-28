@@ -25,7 +25,7 @@ namespace DelegatesAndLambdas
 
         static void worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
         {
-            Console.WriteLine($"Hours: {e.Hours}\t Work Type: {e.WorkType}");
+            Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
         }
 
         //static void DoWork(WorkPerformedHandler del)
