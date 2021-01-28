@@ -15,6 +15,8 @@ namespace DelegatesAndLambdas
         {
             for (int i = 0; i < hours; ++i)
             {
+                // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
+                System.Threading.Thread.Sleep(1000);
                 // Raise event for each hour worked.
                 OnWorkPerformed(i + 1, workType);
             }
