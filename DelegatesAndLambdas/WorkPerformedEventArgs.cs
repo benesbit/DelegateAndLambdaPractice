@@ -4,7 +4,15 @@ using System.Text;
 
 namespace DelegatesAndLambdas
 {
-    class WorkPerformedEventArgs
+    public class WorkPerformedEventArgs : EventArgs
     {
+
+        public WorkPerformedEventArgs()
+        {
+
+        }
+
+        public int Hours { get; set; }
+        public WorkType WorkType { get; set; }
     }
 }
