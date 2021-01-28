@@ -26,16 +26,19 @@ namespace DelegatesAndLambdas
         static int WorkPerformed1(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed1 Called: {hours} and {workType}");
+            return hours + 1;
         }
 
         static int WorkPerformed2(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed2 Called: {hours} and {workType}");
+            return hours + 2;
         }
 
         static int WorkPerformed3(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed3 Called: {hours} and {workType}");
+            return hours + 3;
         }
     }
 
