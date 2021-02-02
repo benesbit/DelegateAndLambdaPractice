@@ -13,6 +13,7 @@ namespace DelegatesAndLambdas
 
             var data = new ProcessData();
             data.Process(2, 3, addDel);
+            data.Process(2, 3, mulDel);
 
 
             var worker = new Worker();
