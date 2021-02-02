@@ -15,8 +15,8 @@ namespace DelegatesAndLambdas
             data.Process(2, 3, addDel);
             data.Process(2, 3, multiplyDel);
 
-            Action<int, int> modAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
-            Action<int, int> multiplyAction = (x, y) => Console.WriteLine($"{x} * {y} = {multiplyDel(x, y)}");
+            Action<int, int> myModAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
+            Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine($"{x} * {y} = {multiplyDel(x, y)}");
 
 
             var worker = new Worker();
