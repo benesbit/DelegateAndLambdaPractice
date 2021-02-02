@@ -10,6 +10,9 @@ namespace DelegatesAndLambdas
         {
             int firstValue = 2;
             int secondValue = 3;
+            int hoursWorked = 8;
+
+            BasicDelegateExamples(hoursWorked);
 
             BizRulesDelegate addDel = (x, y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
@@ -23,8 +26,18 @@ namespace DelegatesAndLambdas
 
             data.ProcessAction(firstValue, secondValue, myModAction);
             data.ProcessAction(firstValue, secondValue, myMultiplyAction);
+        }
 
+        private static void BasicDelegateExamples(int hoursWorked)
+        {
+            var worker = new Worker();
+            worker.WorkPerformed += Worker_WorkPerformed;
+            worker.WorkCompleted += Worker_WorkCompleted;
+            worker.DoWork(hoursWorked, WorkType.GenerateReports);
+        }
 
+        private void BasicDelegateAnonymousFunctionExamples(int first, int second)
+        {
             var worker = new Worker();
             worker.WorkPerformed += (s, e) =>
             {
@@ -34,14 +47,14 @@ namespace DelegatesAndLambdas
             worker.DoWork(8, WorkType.GenerateReports);
         }
 
-        //private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
-        //{
-        //    Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
-        //}
+        private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        {
+            Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
+        }
 
-        //private static void Worker_WorkCompleted(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("Worker is done!");
-        //}
+        private static void Worker_WorkCompleted(object sender, EventArgs e)
+        {
+            Console.WriteLine("Worker is done!");
+        }
     }
 }
