@@ -9,14 +9,14 @@ namespace DelegatesAndLambdas
         static void Main(string[] args)
         {
             BizRulesDelegate addDel = (x, y) => x + y;
-            BizRulesDelegate mulDel = (x, y) => x * y;
+            BizRulesDelegate multiplyDel = (x, y) => x * y;
 
             var data = new ProcessData();
             data.Process(2, 3, addDel);
-            data.Process(2, 3, mulDel);
+            data.Process(2, 3, multiplyDel);
 
             Action<int, int> modAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
-            Action<int, int> mulAction = (x, y) => Console.WriteLine($"{x} * {y} = {mulDel(x, y)}");
+            Action<int, int> multiplyAction = (x, y) => Console.WriteLine($"{x} * {y} = {multiplyDel(x, y)}");
 
 
             var worker = new Worker();
