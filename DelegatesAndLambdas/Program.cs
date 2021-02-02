@@ -16,23 +16,40 @@ namespace DelegatesAndLambdas
 
             BasicDelegateAnonymousFunctionExamples(hoursWorked);
 
+            BasicActionTExamples(firstValue, secondValue);
+        }
+
+        private static void BasicActionTExamples(int first, int second)
+        {
+            Console.WriteLine($"---------- Begin Action<T> Delegate Example ----------");
+
             BizRulesDelegate addDel = (x, y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
 
             var data = new ProcessData();
-            data.Process(firstValue, secondValue, addDel);
-            data.Process(firstValue, secondValue, multiplyDel);
+            data.Process(first, second, addDel);
+            data.Process(first, second, multiplyDel);
+
+            // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
+            System.Threading.Thread.Sleep(1000);
 
             Action<int, int> myModAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
+
+            // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
+            System.Threading.Thread.Sleep(1000);
+
             Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine($"{x} * {y} = {multiplyDel(x, y)}");
 
-            data.ProcessAction(firstValue, secondValue, myModAction);
-            data.ProcessAction(firstValue, secondValue, myMultiplyAction);
+            data.ProcessAction(first, second, myModAction);
+            data.ProcessAction(first, second, myMultiplyAction);
+
+            Console.WriteLine($"---------- End Action<T> Delegate Example ----------\n\n");
         }
 
         private static void BasicDelegateAnonymousFunctionExamples(int hoursWorked)
         {
             Console.WriteLine($"---------- Begin Anonymous Function Delegate Example ----------");
+
             var worker = new Worker();
             worker.WorkPerformed += (s, e) =>
             {
@@ -40,16 +57,19 @@ namespace DelegatesAndLambdas
             };
             worker.WorkCompleted += (s, e) => Console.WriteLine("Worker is done!");
             worker.DoWork(hoursWorked, WorkType.GenerateReports);
+
             Console.WriteLine($"---------- End Anonymous Function Delegate Example ----------\n\n");
         }
 
         private static void BasicDelegateExamples(int hoursWorked)
         {
             Console.WriteLine($"---------- Begin Basic Delegate Example ----------");
+
             var worker = new Worker();
             worker.WorkPerformed += Worker_WorkPerformed;
             worker.WorkCompleted += Worker_WorkCompleted;
             worker.DoWork(hoursWorked, WorkType.GenerateReports);
+
             Console.WriteLine($"---------- End Basic Delegate Example ----------\n\n");
         }
 
