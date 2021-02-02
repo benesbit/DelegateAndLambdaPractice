@@ -8,17 +8,20 @@ namespace DelegatesAndLambdas
         static void Main(string[] args)
         {
             var worker = new Worker();
-            worker.WorkPerformed += Worker_WorkPerformed;
+            worker.WorkPerformed += delegate (object sender, WorkPerformedEventArgs e)
+            {
+                Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
+            };
             worker.WorkCompleted += Worker_WorkCompleted;
             worker.DoWork(8, WorkType.GenerateReports);
 
             //Console.Read();
         }
 
-        private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
-        {
-            Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
-        }
+        //private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        //{
+        //    Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
+        //}
 
         private static void Worker_WorkCompleted(object sender, EventArgs e)
         {
