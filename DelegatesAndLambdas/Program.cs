@@ -21,7 +21,9 @@ namespace DelegatesAndLambdas
 
         private static void BasicFuncTTResultExamples()
         {
-
+            Func<int, int, int> funcAddDel = (x, y) => x + y;
+            Func<int, int, int> funcMultiplyDel = (x, y) => x * y;
+            Func<int, int, int> funcModDel = (x, y) => x % y;
         }
 
         private static void BasicActionTExamples(int first, int second)
