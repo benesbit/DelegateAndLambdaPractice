@@ -23,16 +23,24 @@ namespace DelegatesAndLambdas
         {
             Console.WriteLine($"---------- Begin Action<T> Delegate Example ----------");
 
+            // Delegates using Anonymous Functions (again)
             BizRulesDelegate addDel = (x, y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
 
             var data = new ProcessData();
             data.Process(first, second, addDel);
+
+            // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
+            System.Threading.Thread.Sleep(1000);
+
             data.Process(first, second, multiplyDel);
 
             // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
             System.Threading.Thread.Sleep(1000);
 
+
+
+            // Using Action<T>, Anonymous Functions, and Delegates
             Action<int, int> myModAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
 
             // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
