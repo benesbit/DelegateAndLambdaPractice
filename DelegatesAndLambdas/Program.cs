@@ -19,6 +19,11 @@ namespace DelegatesAndLambdas
             BasicActionTExamples(firstValue, secondValue);
         }
 
+        private static void BasicFuncTTResultExamples()
+        {
+
+        }
+
         private static void BasicActionTExamples(int first, int second)
         {
             Console.WriteLine($"---------- Begin Action<T> Delegate Example ----------");
@@ -37,7 +42,6 @@ namespace DelegatesAndLambdas
 
             // Slow down on purpose - NOT A NORMAL STEP, FOR DEMO ONLY
             System.Threading.Thread.Sleep(1000);
-
 
 
             // Using Action<T>, Anonymous Functions, and Delegates
