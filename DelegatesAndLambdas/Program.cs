@@ -35,11 +35,4 @@ namespace DelegatesAndLambdas
         //    Console.WriteLine("Worker is done!");
         //}
     }
-
-    public enum WorkType
-    {
-        GoToMeetings,
-        Golf,
-        GenerateReports
-    }
 }
