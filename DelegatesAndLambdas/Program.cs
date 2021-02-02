@@ -14,8 +14,6 @@ namespace DelegatesAndLambdas
             };
             worker.WorkCompleted += (s, e) => Console.WriteLine("Worker is done!");
             worker.DoWork(8, WorkType.GenerateReports);
-
-            //Console.Read();
         }
 
         //private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
