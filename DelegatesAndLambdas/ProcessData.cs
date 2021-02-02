@@ -14,7 +14,6 @@ namespace DelegatesAndLambdas
 
         public void ProcessAction(int x, int y, Action<int,int> action)
         {
-            //var result = action(x, y);
             action(x, y);
             Console.WriteLine($"Action has been performed.");
         }
