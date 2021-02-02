@@ -8,18 +8,21 @@ namespace DelegatesAndLambdas
     {
         static void Main(string[] args)
         {
+            int firstValue = 2;
+            int secondValue = 3;
+
             BizRulesDelegate addDel = (x, y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
 
             var data = new ProcessData();
-            data.Process(2, 3, addDel);
-            data.Process(2, 3, multiplyDel);
+            data.Process(firstValue, secondValue, addDel);
+            data.Process(firstValue, secondValue, multiplyDel);
 
             Action<int, int> myModAction = (x, y) => Console.WriteLine($"{x} mod {y} = {x % y}");
             Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine($"{x} * {y} = {multiplyDel(x, y)}");
 
-            data.ProcessAction(2, 3, myModAction);
-            data.ProcessAction(2, 3, myMultiplyAction);
+            data.ProcessAction(firstValue, secondValue, myModAction);
+            data.ProcessAction(firstValue, secondValue, myMultiplyAction);
 
 
             var worker = new Worker();
