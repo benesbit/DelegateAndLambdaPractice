@@ -2,11 +2,16 @@
 
 namespace DelegatesAndLambdas
 {
-    
+    public delegate int BizRulesDelegate(int x, int y);
+
     class Program
     {
         static void Main(string[] args)
         {
+            var data = new ProcessData();
+            data.Process(2, 3);
+
+
             var worker = new Worker();
             worker.WorkPerformed += (s, e) =>
             {
