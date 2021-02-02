@@ -8,8 +8,11 @@ namespace DelegatesAndLambdas
     {
         static void Main(string[] args)
         {
+            BizRulesDelegate addDel = (x, y) => x + y;
+            BizRulesDelegate mulDel = (x, y) => x * y;
+
             var data = new ProcessData();
-            data.Process(2, 3);
+            data.Process(2, 3, addDel);
 
 
             var worker = new Worker();
