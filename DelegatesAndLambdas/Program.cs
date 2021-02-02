@@ -10,7 +10,7 @@ namespace DelegatesAndLambdas
             var worker = new Worker();
             worker.WorkPerformed += (s, e) =>
             {
-                Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
+                Console.WriteLine($"{e.Hours} Hour" + ((e.Hours > 1) ? "s" : "") + $" worked\t Work Type: {e.WorkType}");
             };
             worker.WorkCompleted += (s, e) => Console.WriteLine("Worker is done!");
             worker.DoWork(8, WorkType.GenerateReports);
