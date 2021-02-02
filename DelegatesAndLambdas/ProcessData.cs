@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DelegatesAndLambdas
 {
-    class ProcessData
+    public class ProcessData
     {
+        public void Process(int x, int y)
+        {
+
+        }
     }
 }
