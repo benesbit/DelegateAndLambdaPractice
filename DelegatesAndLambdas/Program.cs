@@ -8,8 +8,11 @@ namespace DelegatesAndLambdas
         static void Main(string[] args)
         {
             var worker = new Worker();
-            worker.WorkPerformed += (s, e) => Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}"); ;
-            worker.WorkCompleted += (s, e) => Console.WriteLine("Worker is done!"); ;
+            worker.WorkPerformed += (s, e) =>
+            {
+                Console.WriteLine($"Hours worked: {e.Hours}\t Work Type: {e.WorkType}");
+            };
+            worker.WorkCompleted += (s, e) => Console.WriteLine("Worker is done!");
             worker.DoWork(8, WorkType.GenerateReports);
 
             //Console.Read();
