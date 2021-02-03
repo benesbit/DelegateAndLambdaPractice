@@ -31,7 +31,12 @@ namespace DelegatesAndLambdas
                 new Customer { City = "New York City", FirstName = "Michelle", LastName = "Smith", ID = 4}
             };
 
-            
+            var phxCusts = custs.Where(c => c.City == "Phoenix").OrderBy(c => c.FirstName);
+
+            foreach (var cust in phxCusts)
+            {
+                Console.WriteLine($"City: {cust.FirstName}");
+            }
         }
 
         private static void BasicFuncTTResultExamples(int first, int second)
