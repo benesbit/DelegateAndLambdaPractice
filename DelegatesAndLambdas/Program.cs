@@ -14,13 +14,13 @@ namespace DelegatesAndLambdas
             int secondValue = 3;
             int hoursWorked = 8;
 
-            LambdaFuncTToQuery();
-
             BasicDelegateExamples(hoursWorked);
 
             BasicDelegateAnonymousFunctionExamples(hoursWorked);
 
             BasicActionTExamples(firstValue, secondValue);
+
+            LambdaFuncTToQuery();
         }
 
         private static void LambdaFuncTToQuery()
