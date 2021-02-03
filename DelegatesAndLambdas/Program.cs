@@ -19,11 +19,20 @@ namespace DelegatesAndLambdas
             BasicActionTExamples(firstValue, secondValue);
         }
 
-        private static void BasicFuncTTResultExamples()
+        private static void BasicFuncTTResultExamples(int first, int second)
         {
+            Console.WriteLine($"---------- Begin Func<T,TResult> Delegate Example ----------");
+
             Func<int, int, int> funcAddDel = (x, y) => x + y;
             Func<int, int, int> funcMultiplyDel = (x, y) => x * y;
             Func<int, int, int> funcModDel = (x, y) => x % y;
+
+            var data = new ProcessData();
+            data.ProcessFunc(first, second, funcAddDel);
+            data.ProcessFunc(first, second, funcMultiplyDel);
+            data.ProcessFunc(first, second, funcModDel);
+
+            Console.WriteLine($"---------- End Func<T,TResult> Delegate Example ----------");
         }
 
         private static void BasicActionTExamples(int first, int second)
