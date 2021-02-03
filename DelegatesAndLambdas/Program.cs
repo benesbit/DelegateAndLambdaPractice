@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace DelegatesAndLambdas
 {
@@ -17,6 +19,19 @@ namespace DelegatesAndLambdas
             BasicDelegateAnonymousFunctionExamples(hoursWorked);
 
             BasicActionTExamples(firstValue, secondValue);
+        }
+
+        private static void LambdaFuncTToQuery()
+        {
+            var custs = new List<Customer>
+            {
+                new Customer { City = "Phoenix", FirstName = "John", LastName = "Doe", ID = 1},
+                new Customer { City = "Phoenix", FirstName = "Jane", LastName = "Doe", ID = 500},
+                new Customer { City = "Seattle", FirstName = "Michiru", LastName = "Kagemori", ID = 3},
+                new Customer { City = "New York City", FirstName = "Michelle", LastName = "Smith", ID = 4}
+            };
+
+            
         }
 
         private static void BasicFuncTTResultExamples(int first, int second)
