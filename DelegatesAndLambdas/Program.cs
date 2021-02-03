@@ -14,6 +14,8 @@ namespace DelegatesAndLambdas
             int secondValue = 3;
             int hoursWorked = 8;
 
+            LambdaFuncTToQuery();
+
             BasicDelegateExamples(hoursWorked);
 
             BasicDelegateAnonymousFunctionExamples(hoursWorked);
@@ -35,7 +37,7 @@ namespace DelegatesAndLambdas
 
             foreach (var cust in phxCusts)
             {
-                Console.WriteLine($"City: {cust.FirstName}");
+                Console.WriteLine($"Name: {cust.FirstName}");
             }
         }
 
